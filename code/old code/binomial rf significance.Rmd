@@ -1,0 +1,23 @@
+---
+title: "binomial RF significance"
+author: "Samir Rachid Zaim"
+date: "10/7/2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Let $T_i$ represent an individual tree grown in a random forest. Then, $\mathbf{T}= \{T_1, \cdots, T_K\}$ denotes the random forest (i.e., the collection of trees). If, at each $T_i$, $m < p$ features are subsampled to reduce the feature subspace at each tree, then the probability of a feature $X_j$ being chosen by a tree is $1 - \prod_{i=1}^m\frac{p-i}{p-(i-1)}$, since we are not selecting variables without replacement. 
+
+Then, after the variables have been subsampled from p to m (m < p), then the probability of $X_j$ being selected among the m available predictors is simply $\frac{1}{m}$. Putting these two together, we then get that the probability of $X_j$ being selected as the main predictor (i.e., root node) of a tree $T_i$ is 
+
+$$q = \text{Pr(Selecting }X_j \text{ at the root node} ) = \bigg(1 - \prod_{i=1}^m\frac{p-i}{p-(i-1)} \bigg)\frac{1}{m}$$.
+
+Letting, $S_{ij}$ denoting the random variable measuring whether $X_j$ is selected at tree $T_i$ is a bernoulli random variable, $S_{ij} \sim Bern(q)$, and a Binomial distribution across all K trees, $S_j \sim Binomial(K, q)$. Then we can provide a measure of significance (i.e., a p-value), regarding if $X_j$ was selected more than expected by chance. 
+
+
+

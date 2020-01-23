@@ -1,0 +1,99 @@
+---
+title: "Cheat Sheet for HPC Commands"
+author: "Samir Rachid Zaim"
+date: "1/3/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Syncing Files to Remote Server
+
+```{r eval= FALSE}
+
+rsync -avz /local/path/to/file user@remoteServer:/remote/path/to/file/
+
+```
+
+
+
+# GitHub Commands
+
+```{r eval= FALSE}
+
+git checkout 
+
+git add .
+git commit -m "add a message"
+git push
+
+```
+
+# HPC Bash Files 
+
+### A Sample PBS file
+```{r eval= FALSE}
+  #!/bin/bash
+  #PBS  -N nameOfFile
+  #PBS  -m bea
+  #PBS  -M user@email.arizona.edu
+  #PBS  -W group_list=PI
+  #PBS  -q 'windfall'
+  #PBS -l select=1:ncpus=28:mem=180gb
+  #PBS -l walltime=estimated_time
+  #PBS -l cput=estimated_time
+
+  module load R/3.5.1
+  export R_LIBS=/path/to/R_libs 
+
+  cd /path/to/file
+
+  Rscript nameOfRFile.R commandArg1 commandArg2
+  
+```
+
+
+
+### A Bash Script to Generate PBS Files
+```{r eval= FALSE}
+
+#!/bin/bash
+counter =0
+for parameter1 in  param1Value1 ... param1ValueN
+  do
+      echo $parameter1
+	for parameter2 in param2Value1 ... param2ValueN
+	  do 
+		echo parameter2
+	((counter++))
+        echo "working on "$counter
+	echo "#!/bin/bash
+  #!/bin/bash
+  #PBS  -N nameOfFile$counter
+  #PBS  -m bea
+  #PBS  -M user@email.arizona.edu
+  #PBS  -W group_list=PI
+  #PBS  -q 'windfall'
+  #PBS -l select=1:ncpus=28:mem=180gb
+  #PBS -l walltime=estimated_time
+  #PBS -l cput=estimated_time
+
+  module load R/3.5.1
+  export R_LIBS=/path/to/R_libs 
+
+  cd /path/to/file
+
+  Rscript nameOfRFile.R commandArg1 commandArg2  " > "rf."$counter".sh"
+                chmod a+rx "rf."$counter".sh"
+		  qsub < "rf."$counter".sh"
+	  done
+done
+
+
+```
+
+
+
+

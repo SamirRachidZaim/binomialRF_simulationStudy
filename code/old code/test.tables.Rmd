@@ -1,0 +1,53 @@
+---
+title: "Untitled"
+author: "Samir Rachid Zaim"
+date: "5/15/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrl}
+  \hline
+ & Interaction & N & Pvalue & Adj.Pval & Significant \\ 
+  \hline
+1 & X1$|$X3$|$ & 129.97 & 0.00 & 0.00 & TRUE \\ 
+  2 & X3$|$X7$|$ & 36.05 & 0.03 & 0.08 & FALSE \\ 
+  3 & X1$|$X9$|$ & 30.28 & 0.03 & 0.09 & FALSE \\ 
+  4 & X1$|$X4$|$ & 32.81 & 0.03 & 0.09 & FALSE \\ 
+  5 & X3$|$X9$|$ & 31.35 & 0.03 & 0.09 & FALSE \\ 
+  6 & X1$|$X8$|$ & 33.43 & 0.05 & 0.10 & FALSE \\ 
+  7 & X3$|$X8$|$ & 32.64 & 0.05 & 0.10 & FALSE \\ 
+  8 & X1$|$X2$|$ & 29.97 & 0.04 & 0.10 & FALSE \\ 
+  9 & X3$|$X10$|$ & 32.74 & 0.04 & 0.10 & FALSE \\ 
+  10 & X1$|$X10$|$ & 34.58 & 0.06 & 0.11 & FALSE \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlrrrl}
+  \hline
+ & Interaction & N & Pvalue & Adj.Pval & Significant \\ 
+  \hline
+1 & X2$|$X4$|$ & 73.51 & 0.00 & 0.02 & TRUE \\ 
+  2 & X1$|$X3$|$ & 71.25 & 0.01 & 0.02 & TRUE \\ 
+  3 & X2$|$X3$|$ & 58.85 & 0.01 & 0.03 & TRUE \\ 
+  4 & X1$|$X2$|$ & 57.55 & 0.02 & 0.04 & TRUE \\ 
+  5 & X3$|$X4$|$ & 58.06 & 0.02 & 0.05 & TRUE \\ 
+  6 & X1$|$X4$|$ & 56.04 & 0.02 & 0.06 & FALSE \\ 
+  7 & X3$|$X10$|$ & 20.13 & 0.16 & 0.31 & FALSE \\ 
+  8 & X1$|$X10$|$ & 18.69 & 0.17 & 0.32 & FALSE \\ 
+  9 & X4$|$X10$|$ & 18.96 & 0.17 & 0.32 & FALSE \\ 
+  10 & X2$|$X7$|$ & 18.96 & 0.16 & 0.32 & FALSE \\ 
+   \hline
+\end{tabular}
+\end{table}

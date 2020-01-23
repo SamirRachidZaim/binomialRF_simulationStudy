@@ -1,0 +1,6 @@
+"Model","Ntree","Precision","Recall","TestError","ModelSize"
+"binomialRF",100,1,0.8,0.1705,4
+"binomialRF",250,1,1,0.1115,5
+"binomialRF",500,1,1,0.1025,5
+"binomialRF",1000,1,1,0.104,5
+"binomialRF",2000,1,1,0.102,5

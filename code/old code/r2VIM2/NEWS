@@ -1,0 +1,30 @@
+r2VIM 1.3
+=========
+* bug fixes:
+  - calculate error for multiple threading of parallelRandomForest methods (not returned in randomForest object)
+* changes:
+  - automatic check of operating system
+
+r2VIM 1.2
+=========
+* changes by ERH:
+  - added code to some of the functions so that the package will run on    
+    Windows versions of R by adding a logical windows paramter to specific           
+    functions (note this does require additional installation of rjungle for 
+    windows, PLINK for windows, and software that allows Unix commands to 
+    run in Windows)
+  - updated and added to documentation to include: installation manual, 
+    tutorial, r2VIM reference manual, and parallelRandomForest reference 
+    manual (in separate zip file).
+
+
+r2VIM 1.1
+=========
+
+* bug fixes:
+  - labels on x axis of Manhattan plot for small chromosomal region
+
+r2VIM 1.0
+=========
+
+* first running version
