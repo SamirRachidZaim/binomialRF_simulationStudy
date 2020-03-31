@@ -1,0 +1,4 @@
+"Model","NumGenes","Precision","Recall"
+"RF",19862,0.985,0.985
+"RF_genes",16,0.975,0.975
+"RF_interactions",11,0.983,0.983

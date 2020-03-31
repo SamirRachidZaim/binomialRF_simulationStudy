@@ -1,0 +1,6 @@
+"Cancer","RF_Accuracy","binomialRF_Accuracy","BinomialRF_Genes","BinomialRF_Interactions","NumberSamples"
+"BRCA",0.944444444444444,1,51,39,194
+"Kidney",0.916666666666667,0.916666666666667,16,11,130
+"KidneyRenal",0.916666666666667,0.916666666666667,16,11,130
+"StomachAdeno",1,NA,1,0,58
+"HeadNeck",0.833333333333333,NA,0,0,62
